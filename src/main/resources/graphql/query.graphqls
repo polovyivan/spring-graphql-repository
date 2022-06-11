@@ -6,7 +6,7 @@ type Query {
 
      findAllCustomers : [CustomerEntity]
 
-     findCustomerById(customerId : String!) : CustomerEntity
+     findCustomerById( id : String!) : CustomerEntity
 
 
      # PURCHASE TRANSACTION
