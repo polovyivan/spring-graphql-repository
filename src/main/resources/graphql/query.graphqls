@@ -1,0 +1,40 @@
+scalar Date
+
+type Query {
+
+     # CUSTOMERS
+
+     findAllCustomers : [CustomerEntity]
+
+     findCustomerById(customerId : String!) : CustomerEntity
+
+
+     # PURCHASE TRANSACTION
+
+     findAllPurchaseTransactions  : [PurchaseTransactionProjection]
+
+     findPurchaseTransactionById(id : String!) : PurchaseTransactionProjection
+}
+
+type CustomerEntity {
+      id : String
+      fullName : String
+      phoneNumber : String
+      address : String
+      createdAt : Date
+      purchaseTransactions : [PurchaseTransactionEntity]
+}
+
+type PurchaseTransactionEntity {
+      id : String
+      paymentType : String
+      amount : Float
+      createdAt : Date
+}
+
+type PurchaseTransactionProjection{
+      id : String
+      paymentType : String
+      amount : Float
+      createdAt : Date
+}
