@@ -1,0 +1,117 @@
+{
+	"info": {
+		"_postman_id": "46da7870-ea50-4a2b-a32c-1b6db52e9f0c",
+		"name": "graphql-repository",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "findAllCustomers",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "query {\n    findAllCustomers {\n      id \n      fullName \n      phoneNumber\n      address \n      createdAt \n      purchaseTransactions {\n                                 id \n                                 paymentType\n                                 amount \n                                 createdAt\n                                           }\n    }\n}",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8001/spring-graphql-repository/customers-graphql",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8001",
+					"path": [
+						"spring-graphql-repository",
+						"customers-graphql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "findCustomerById",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "query {\n    findCustomerById (id : \"e6162f6f-4ef7-4ad4-9dab-240b82dc3386\") {\n      id \n      fullName \n      phoneNumber\n      address \n      createdAt\n      purchaseTransactions {\n                                 id \n                                 paymentType\n                                 amount \n                                 createdAt\n                                           } \n    }\n}",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8001/spring-graphql-repository/customers-graphql",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8001",
+					"path": [
+						"spring-graphql-repository",
+						"customers-graphql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "findAllPurchaseTransactions",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "query {\n    findAllPurchaseTransactions {\n      id\n      paymentType\n      createdAt \n    }\n}",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8001/spring-graphql-repository/customers-graphql",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8001",
+					"path": [
+						"spring-graphql-repository",
+						"customers-graphql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "findPurchaseTransactionById",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "query {\n    findPurchaseTransactionById (id: \"fa0dc975-cfcf-46fe-bf54-23e501cf2da4\") {\n      id\n      paymentType\n      createdAt \n    }\n}",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8001/spring-graphql-repository/customers-graphql",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8001",
+					"path": [
+						"spring-graphql-repository",
+						"customers-graphql"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
