@@ -28,12 +28,12 @@ type CustomerEntity {
 type PurchaseTransactionEntity {
       id : String
       paymentType : String
+      amount : Float
       createdAt : Date
 }
 
 type PurchaseTransactionProjection{
       id : String
       paymentType : String
-      amount : Float
       createdAt : Date
 }
